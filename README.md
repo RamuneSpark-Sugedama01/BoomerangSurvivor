@@ -20,6 +20,8 @@ This is not an html+JavaScript learning tool.
 ※ラムネ'01（すげだま'01）以外による自作主張<br>
 ※本コンテンツを用いた無断での収益化
 
+<hr>
+
 All of the following are strictly forbidden for you to do.
 
 You use the files beyond the scope of personal use.<br>
