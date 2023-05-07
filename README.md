@@ -44,8 +44,8 @@ You monetize using this content without my permission.
 <hr>
 『ブーメランサバイバー』について
 
-ラムネ'01による、2022年頃より展開されるオリジナルゲームシリーズです。
+ラムネ'01による、2022年頃より展開されるオリジナルゲームシリーズです。<br>
 以下LINEスタンプが先行公開中となります。
 
-https://line.me/S/sticker/21096265　（日本語）
+https://line.me/S/sticker/21096265　（日本語）<br>
 https://line.me/S/sticker/21096265　（English）
