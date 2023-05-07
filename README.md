@@ -48,4 +48,4 @@ You monetize using this content without my permission.
 以下LINEスタンプが先行公開中となります。
 
 https://line.me/S/sticker/21096265　（日本語）<br>
-https://line.me/S/sticker/21096265　（English）
+https://line.me/S/sticker/21127156　（English）
