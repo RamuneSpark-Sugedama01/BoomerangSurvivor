@@ -11,6 +11,13 @@ This is not an html+JavaScript learning tool.
 
 <hr>
 
+このコンテンツに関するお問い合わせ先
+
+ラムネ'01
+https://twitter.com/RAMUNE_SPARK
+
+<hr>
+
 以下の行為はすべて厳禁とします。
 
 ※私的利用の範囲を超える利用<br>
@@ -30,3 +37,12 @@ Transmit files to third parties.<br>
 You reproduce any files or data on your site without my permission.<br>
 You claim that you created this on your own. Or you falsely claim that you are Ramune '01 (Sugedama '01).<br>
 You monetize using this content without my permission.
+
+<hr>
+『ブーメランサバイバー』について
+
+ラムネ'01による、2022年頃より展開されるオリジナルゲームシリーズです。
+以下LINEスタンプが先行公開中となります。
+
+https://line.me/S/sticker/21096265　（日本語）
+https://line.me/S/sticker/21096265　（English）
