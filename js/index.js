@@ -3212,7 +3212,7 @@ if(sizealert == 0){
             BGM.volume = 1.0;
         BGM.loop = false;
         }if (i == 6){       
-                    BGM.src = "mp3/SELECT.mp3";
+                    BGM.src = "mp3/select.mp3";
             BGM.volume = 1.0;
         BGM.loop = false;
         }if (i == 7){       
