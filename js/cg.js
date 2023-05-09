@@ -1,4 +1,4 @@
-const localPlayStyle = false;
+const localPlayStyle = true;
 const URL = location.href;
 
 let playOKMode;
@@ -15,8 +15,6 @@ if(localPlayStyle == false){
 }else{
     playOKMode = true;
 }
-
-console.log(playOKMode)
 
     setTimeout(()=>{
 const id = setInterval("move()", 20 );    
