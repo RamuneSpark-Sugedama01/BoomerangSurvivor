@@ -7,10 +7,13 @@ This is not an html+JavaScript learning tool.
 
 私自身が通っている大学に過去に課題として提出した作品がベースですが、一部変更を加えています。
 
+以下リンクからお楽しみください。<br>
+https://ramunespark-sugedama01.github.io/BoomerangSurvivor/
+
 ※本データは、予告なく公開を中止することがあります。<br>
 その際も、以下禁止事項が無効になることはございません。予めご了承ください。
 
-（PC以外での動作は非推奨です）
+（PC以外での動作やファイルのダウンロードは推奨しておりません）
 
 <hr>
 
