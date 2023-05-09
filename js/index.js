@@ -1,4 +1,3 @@
-document.write( "<div id= screen> </div>" );
 const screen = document.getElementById( "screen" );
 
 let sg = "";
@@ -493,21 +492,17 @@ let e_select = 0
 
 
 
-
-
-//ゲーム進行    
-let id = setInterval("move( )", 20 );
 function move( ) {
 
     
         monitor_resize();
      
-        
-        document.getElementById( "TEN" ).style.left = 680;
+    phonecheck();
+    
+     document.getElementById( "TEN" ).style.left = 680;
     
     document.getElementById( "HiTEN" ).style.left = 1165;
   
-    phonecheck();
     
  //デバッグ
     
@@ -3612,7 +3607,14 @@ if(scene == "load"){ //ゲームスタート、タイトル表示演出
 
         
         if (shift == 0){
+                 if(playOKMode){
+       
             document.getElementById( "haikei" ).innerHTML = "<img src = image/alert.jpg>";
+                     
+                 }else{
+            document.getElementById( "haikei" ).innerHTML = "<img src = image/RunningError.jpg>";         
+                     
+                 }
      blackout = blackout - shiftspeed;
             if(blackout <= 0){
                 blackout = 0;
@@ -3620,13 +3622,16 @@ if(scene == "load"){ //ゲームスタート、タイトル表示演出
             }
         }
         if(shift == 1){
+            
+            if(playOKMode){
         document.getElementById( "enter" ).innerHTML = "<img src = image/enteralert.png>";
-            if(k == "ENTER" && sizealert == 0){
+            }
+            if(k == "ENTER" && sizealert == 0 && playOKMode){
                  shift = 2; 
               //  soundok.src = "mp3/OK.mp3";
               //          soundok.play();
               }
-            if(k == "SPACE" && sizealert == 0){
+            if(k == "SPACE" && sizealert == 0 && playOKMode){
             
                 erase++;
             
