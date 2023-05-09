@@ -14,15 +14,18 @@
    
         
     <div id = "screen"><img src = image/screen.png>
-            <noscript>
-        <div id = "error"><img src = "image/ScriptError.jpg"></div>
-    </noscript>
         <div id = "h" style ="visibility:hidden;"><form> <input id="file" type="file" name="file" accept =".txt"> </form></div>
     
     </div>
+          
+               <noscript>
+        <div id = "error"><img src = "image/ScriptError.jpg"></div>
+    </noscript>
+       
     
     </body>
     
+    <script src="js/cg.js"></script>
     <script src="js/check.js"></script>
     <script src="js/index.js"></script>
     <script src="js/resize.js"></script>
@@ -52,10 +55,23 @@
       }
     
     #error{
-         position: absolute;
-        left: 0;
-        top: 0;
-    }
+          position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        z-index: 0;
+        user-select: none;
+         width: 100%;
+    height: 100%;
+   
+     }
+    
+    #error img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
     
     
         
