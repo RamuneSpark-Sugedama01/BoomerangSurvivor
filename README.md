@@ -31,7 +31,8 @@ https://twitter.com/RAMUNE_SPARK
 ※第三者への送信<br>
 ※サイト等へのファイル・データの無断転載<br>
 ※ラムネ'01（すげだま'01）以外による自作主張<br>
-※本コンテンツを用いた無断での収益化
+※本コンテンツを用いた無断での収益化<br>
+※その他、法律に違反する行為
 
 <hr>
 
@@ -42,7 +43,8 @@ You modify any file, including source code and images.<br>
 Transmit files to third parties.<br>
 You reproduce any files or data on your site without my permission.<br>
 You claim that you created this on your own. Or you falsely claim that you are Ramune '01 (Sugedama '01).<br>
-You monetize using this content without my permission.
+You monetize using this content without my permission.<br>
+You violate the law.
 
 <hr>
 『ブーメランサバイバー』について
