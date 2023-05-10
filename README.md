@@ -40,7 +40,7 @@ All of the following are strictly forbidden for you to do.
 
 You use the files beyond the scope of personal use.<br>
 You modify any file, including source code and images.<br>
-Transmit files to third parties.<br>
+You transmit files to third parties.<br>
 You reproduce any files or data on your site without my permission.<br>
 You claim that you created this on your own. Or you falsely claim that you are Ramune '01 (Sugedama '01).<br>
 You monetize using this content without my permission.<br>
