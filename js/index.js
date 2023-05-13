@@ -1,5 +1,3 @@
-const screen = document.getElementById( "screen" );
-
 let sg = "";
 
 if(isInstalledFont('Segoe Script')){
@@ -231,7 +229,7 @@ let attack = "EMPTY"; //ブーメランキー
 document.getElementById( "mostback" ).style.position = "absolute";
 document.getElementById( "mostback" ).style.left = 0;
 document.getElementById( "mostback" ).style.top = 0;
-document.getElementById( "mostback" ).innerHTML = "<img src = image/black.jpg>";
+setImage(document.getElementById( "mostback" ),"image/black.jpg");
 screen.appendChild(document.getElementById( "mostback" ));
     
 //画像・文字
@@ -478,7 +476,7 @@ document.getElementById( "black" ).style.position = "absolute";
 document.getElementById( "black" ).style.left = 0;
 document.getElementById( "black" ).style.top = 0;
                   document.getElementById( "black" ).style.opacity = blackout;
-document.getElementById( "black" ).innerHTML = "<img src = image/black.jpg>";
+setImage(document.getElementById( "black" ),"image/black.jpg");
         screen.appendChild(document.getElementById( "black" ));
     
     
@@ -547,17 +545,17 @@ function move( ) {
         
         //背景・ステータス
         
-        document.getElementById( "STOCK" ).innerHTML = stock;
-        document.getElementById( "STOCKS" ).innerHTML = stock;
+        setText(document.getElementById( "STOCK" ),stock);
+        setText(document.getElementById( "STOCKS" ),stock);
     
- document.getElementById( "stat" ).innerHTML = "<img src = image/status.png>";
+ setImage(document.getElementById( "stat" ),"image/status.png");
         
-        document.getElementById( "TEN" ).innerHTML = p;
+        setText(document.getElementById( "TEN" ),p);
         
-        document.getElementById( "HiTEN" ).innerHTML = hi;
+        setText(document.getElementById( "HiTEN" ),hi);
         
         if (life == 2){
-        document.getElementById( "heart" ).innerHTML = "<img src = image/heart.png width = 50>";
+        setImageWidth(document.getElementById( "heart" ),"image/heart.png",50);
         }else{
             document.getElementById( "heart" ).innerHTML = "";
         }
@@ -1213,23 +1211,23 @@ if (lrk =="EMPTY"||udk == "EMPTY"){
     //静止モーション・アニメーション・座標調整
 if(walk == 0 && damage >= 0){
     if (vec == "down"){
- document.getElementById( "player" ).innerHTML = "<img src = image/down.png>"  
+ setImage(document.getElementById( "player" ),"image/down.png");  
     }if (vec == "up"){
- document.getElementById( "player" ).innerHTML = "<img src = image/up.png>"  
+ setImage(document.getElementById( "player" ),"image/up.png");  
     }if (vec == "left"){
- document.getElementById( "player" ).innerHTML = "<img src = image/left.png>"  
+ setImage(document.getElementById( "player" ),"image/left.png");  
     }if (vec == "right"){
- document.getElementById( "player" ).innerHTML = "<img src = image/right.png>"  
+ setImage(document.getElementById( "player" ),"image/right.png");  
     }
 }else if(walk == 1 && damage >= 0){
      if (vec == "down"){
- document.getElementById( "player" ).innerHTML = "<img src = image/down_anim.png>"           
+ setImage(document.getElementById( "player" ),"image/down_anim.png");           
     }if (vec == "up"){
- document.getElementById( "player" ).innerHTML = "<img src = image/up_anim.png>"  
+ setImage(document.getElementById( "player" ),"image/up_anim.png");  
     }if (vec == "left"){
- document.getElementById( "player" ).innerHTML = "<img src = image/left_anim.png>"  
+ setImage(document.getElementById( "player" ),"image/left_anim.png");  
     }if (vec == "right"){
- document.getElementById( "player" ).innerHTML = "<img src = image/right_anim.png>"  
+ setImage(document.getElementById( "player" ),"image/right_anim.png");  
     }
 }
     
@@ -1267,7 +1265,7 @@ if(walk == 0 && damage >= 0){
 wx[0] = atarix - wsize * 0.5;
 wy[0] = atariy - wsize * 0.5;
         
-        document.getElementById( "buki" + 0 ).innerHTML = "<img src = image/weapon_anim.png width=25>";
+        setImageWidth(document.getElementById( "buki" + 0 ),"image/weapon_anim.png",25);
   
         wvec = vec;
         
@@ -1293,7 +1291,7 @@ wy[0] = atariy - wsize * 0.5;
         if(scene == "game"){
         
      if (wvec == "down" && wy[0]<atariy && weaponv < wv){
-          document.getElementById( "buki"+0 ).innerHTML = ""
+          document.getElementById( "buki"+0 ).innerHTML = "";
          chain = 1;
          weapon = 1;
                      weaponcatch[0]=1;
@@ -1303,7 +1301,7 @@ wy[0] = atariy - wsize * 0.5;
          wvec = "";
          weaponv = wv;
             }if (wvec == "up" && wy[0] > atariy&& weaponv < wv){
-  document.getElementById( "buki"+0 ).innerHTML = ""
+  document.getElementById( "buki"+0 ).innerHTML = "";
                 chain = 1;
          weapon = 1;
                             weaponcatch[0]=1;
@@ -1314,7 +1312,7 @@ wy[0] = atariy - wsize * 0.5;
                          weaponv = wv;
                
 }if (wvec == "left" && wx[0] > atarix && weaponv < wv){
-document.getElementById( "buki"+0 ).innerHTML = ""
+document.getElementById( "buki"+0 ).innerHTML = "";
     chain = 1;
          weapon = 1;
             weaponcatch[0]=1;
@@ -1324,7 +1322,7 @@ document.getElementById( "buki"+0 ).innerHTML = ""
             wvec = "";
              weaponv = wv;
     }if (wvec == "right" && wx[0] < atarix && weaponv < wv){
- document.getElementById( "buki"+0 ).innerHTML = ""
+ document.getElementById( "buki"+0 ).innerHTML = "";
         chain = 1;
          weapon = 1;
                     weaponcatch[0]=1;
@@ -1341,7 +1339,7 @@ document.getElementById( "buki"+0 ).innerHTML = ""
           weaponv = weaponv - wvdown;
     
         if(weaponv <= -wv){
-            meaponv = -wv;
+            weaponv = -wv;
         }
         
        
@@ -1374,7 +1372,7 @@ document.getElementById( "buki"+0 ).innerHTML = ""
 wx[i] = atarix - wsize * 0.5;
 wy[i] = atariy - wsize * 0.5;
         
-        document.getElementById( "buki" + i ).innerHTML = "<img src = image/weapon_anim.png width=25>";
+        setImageWidth(document.getElementById( "buki" + i ),"image/weapon_anim.png",25);
         
           weaponcatch[i] =0;
         
@@ -1475,7 +1473,7 @@ wy[i] = 0;
 document.getElementById( "buki" + bi ).style.top = wy[bi];
                     
                    if(weaponcatch[bi] == 0  ){
-            document.getElementById( "buki" + bi ).innerHTML = "<img src = image/weapon_anim.png width=25>";                    
+            setImageWidth(document.getElementById( "buki" + bi ),"image/weapon_anim.png",25);                    
                     }
                     
                 }
@@ -1652,19 +1650,19 @@ attackup = attackup + 1;
         
              
   if (im[0] == 1){
-      document.getElementById( "item" + 0 ).innerHTML = "<img src = image/speed.png width = 50>"
+      setImageWidth(document.getElementById( "item" + 0 ),"image/speed.png",50);
   }
     if (im[1] == 1){
-      document.getElementById( "item" + 1 ).innerHTML = "<img src = image/weaponspeed.png width = 50>"
+      setImageWidth(document.getElementById( "item" + 1 ),"image/weaponspeed.png",50);
   } 
         if (im[2] == 1){
-      document.getElementById( "item" + 2 ).innerHTML = "<img src = image/4way.png width = 50>"
+      setImageWidth(document.getElementById( "item" + 2 ),"image/4way.png",50);
   }
          if (im[3] == 1){
-      document.getElementById( "item" + 3 ).innerHTML = "<img src = image/heart.png width = 50>"
+      setImageWidth(document.getElementById( "item" + 3 ),"image/heart.png",50);
   }
         if (im[4] == 1){
-      document.getElementById( "item" + 4 ).innerHTML = "<img src = image/zanki.png width = 50>"
+      setImageWidth(document.getElementById( "item" + 4 ),"image/zanki.png",50);
   }
 
         
@@ -1690,7 +1688,7 @@ if(aem[i] == 0 && Math.random( ) > aeratio){
             aey[i]=aey[i]+aev;
                 
          
-       document.getElementById( "Aenemy" + i ).innerHTML = "<img src = image/enemy_anim.png>";
+       setImage(document.getElementById( "Aenemy" + i ),"image/enemy_anim.png");
    
 
                 if(aey[i]>800+1){
@@ -1709,7 +1707,7 @@ if(aem[i] == 0 && Math.random( ) > aeratio){
         
     if (((Math.abs (wax[bi] - aaex[i]) < 30 && Math.abs (way[bi] - aaey[i]) < 30) && weaponcatch[bi]==0 )&& aem[i] == 1 && scene == "game"){
      aem[i] = 2;
-       document.getElementById( "Aenemy" + i ).innerHTML = "<img src = image/enemyD_anim.png>";
+       setImage(document.getElementById( "Aenemy" + i ),"image/enemyD_anim.png");
         
             sounddefeat.src = "mp3/defeat.mp3";
             sounddefeat.play();
@@ -1766,7 +1764,7 @@ if(bem[i] == 0 && Math.random( ) > beratio){
             if( bey[i] <= 0 ){
                    bem[i] = 0;
       }
-                document.getElementById( "Benemy" + i ).innerHTML = "<img src = image/BENEMY.png>";
+                setImage(document.getElementById( "Benemy" + i ),"image/BENEMY.png");
    
 
                 
@@ -1781,7 +1779,7 @@ if(bem[i] == 0 && Math.random( ) > beratio){
         
     if (((Math.abs (wax[bi] - baex[i]) < 30 && Math.abs (way[bi] - baey[i]) < 30) && weaponcatch[bi]==0 )&& bem[i] == 1&& scene == "game"){
      bem[i] = 2;
-       document.getElementById( "Benemy" + i ).innerHTML = "<img src = image/enemyD_anim.png>";
+       setImage(document.getElementById( "Benemy" + i ),"image/enemyD_anim.png");
         
             sounddefeat.src = "mp3/defeat.mp3";
             sounddefeat.play();
@@ -1845,7 +1843,7 @@ if(cem[i] == 0 && Math.random( ) > ceratio){
             if(cem[i] == 1){
                  if (cevec[i] == "left"){
                      
-            document.getElementById( "Cenemy" + i ).innerHTML = "<img src = image/CENEMYL.png>";
+            setImage(document.getElementById( "Cenemy" + i ),"image/CENEMYL.png");
                      
             cex[i]=cex[i]-cev[i];
                  }
@@ -1853,7 +1851,7 @@ if(cem[i] == 0 && Math.random( ) > ceratio){
                      
             cex[i]=cex[i]+cev[i];
                      
-            document.getElementById( "Cenemy" + i ).innerHTML = "<img src = image/CENEMYR.png>";
+            setImage(document.getElementById( "Cenemy" + i ),"image/CENEMYR.png");
                  }
                 
             if( cex[i] < -100 || cex[i] > 1200+1 ){
@@ -1872,7 +1870,7 @@ if(cem[i] == 0 && Math.random( ) > ceratio){
         
     if (((Math.abs (wax[bi] - caex[i]) < 30 && Math.abs (way[bi] - caey[i]) < 30) && weaponcatch[bi]==0 )&& cem[i] == 1&& scene == "game"){
     
-       document.getElementById( "Cenemy" + i ).innerHTML = "<img src = image/enemyD_anim.png>";
+       setImage(document.getElementById( "Cenemy" + i ),"image/enemyD_anim.png");
         
             sounddefeat.src = "mp3/defeat.mp3";
             sounddefeat.play();
@@ -1932,7 +1930,7 @@ if(dem[i] == 0 && Math.random( ) > deratio){
                 
             if(dem[i] == 1){
             
-                 document.getElementById( "Denemy" + i ).innerHTML = "<img src = image/DENEMY.png>";
+                 setImage(document.getElementById( "Denemy" + i ),"image/DENEMY.png");
             
                  //追跡モード
                 if(scene == "game" && deate[i] == 0){
@@ -2033,7 +2031,7 @@ if(dem[i] == 0 && Math.random( ) > deratio){
         
     if (((Math.abs (wax[bi] - daex[i]) < 30 && Math.abs (way[bi] - daey[i]) < 30) && weaponcatch[bi]==0 )&& dem[i] == 1 && scene == "game"){
     
-       document.getElementById( "Denemy" + i ).innerHTML = "<img src = image/enemyD_anim.png>";
+       setImage(document.getElementById( "Denemy" + i ),"image/enemyD_anim.png");
         
             sounddefeat.src = "mp3/defeat.mp3";
             sounddefeat.play();
@@ -2103,7 +2101,7 @@ if(eem == 0 && Math.random( ) > eeratio){
             
             if(eem == 1 && eey<100){
                     ecount = 0;
-                  document.getElementById( "Eenemy" ).innerHTML = "<img src = image/EENEMY1.png>";
+                  setImage(document.getElementById( "Eenemy" ),"image/EENEMY1.png");
                 eey = eey + 4;
             }
         
@@ -2115,7 +2113,7 @@ if(eem == 0 && Math.random( ) > eeratio){
                             }
         
         if(eem == 2){
-              document.getElementById( "Eenemy" ).innerHTML = "<img src = image/EENEMY.png>";
+              setImage(document.getElementById( "Eenemy" ),"image/EENEMY.png");
              ecount = ecount + 1;
         }
         
@@ -2157,7 +2155,7 @@ if(eem == 0 && Math.random( ) > eeratio){
 
             
             
-                  document.getElementById( "Eenemy" ).innerHTML = "<img src = image/EENEMY1.png>";
+                  setImage(document.getElementById( "Eenemy" ),"image/EENEMY1.png");
            
             eem = 4;
             
@@ -2183,7 +2181,7 @@ if(eem == 0 && Math.random( ) > eeratio){
                     for( bi = 0; bi < 4; bi++){
         
     if (((Math.abs (wax[bi] - eaex) < 30 && Math.abs (way[bi] - eaey) < 30) && weaponcatch[bi]==0 )&& eem == 4){
-       document.getElementById( "Eenemy" ).innerHTML = "<img src = image/EENEMY4.png>";
+       setImage(document.getElementById( "Eenemy" ),"image/EENEMY4.png");
         eem = 5;
         
 }
@@ -2207,7 +2205,7 @@ if(eem == 0 && Math.random( ) > eeratio){
     }
         
         if (walk == 0 && idol == 200 && attack == "EMPTY"){
-          document.getElementById( "player" ).innerHTML = "<img src = image/IDOL.png>";   
+          setImage(document.getElementById( "player" ),"image/IDOL.png");   
         }
         
         if(walk == 1 || attack == "ON"){
@@ -2262,7 +2260,7 @@ if(eem == 0 && Math.random( ) > eeratio){
         
               if(damage < 0){
                              document.getElementById( "player" ).style.opacity = 1;
-                  document.getElementById( "player" ).innerHTML = "<img src = image/miss_anim.png>";
+                  setImage(document.getElementById( "player" ),"image/miss_anim.png");
                   if(damage > -40){
                       damage = 2;
                       shottime = 0; //押しっぱなしで投げられないようにする
@@ -2312,10 +2310,10 @@ if(eem == 0 && Math.random( ) > eeratio){
            i = 0;
 
         if(misscount < 7){
-        document.getElementById( "player" ).innerHTML = "<img src = image/missdown.png>";
+        setImage(document.getElementById( "player" ),"image/missdown.png");
         }else if(misscount < 49){
             i = Math.floor((misscount - 7)/7);
-        document.getElementById( "player" ).innerHTML = "<img src = image/DEFEAT_PLAYER"+i+".png>";
+        setImage(document.getElementById( "player" ),"image/DEFEAT_PLAYER"+i+".png");
         }else if(misscount < 60){
         document.getElementById( "player" ).innerHTML = "";
         }else{
@@ -2386,16 +2384,16 @@ document.getElementById( "buki" + bi ).style.top = wy[bi];
  
         //ここまで
         
-        document.getElementById( "TEN" ).innerHTML = p;
+        setText(document.getElementById( "TEN" ),p);
         
-        document.getElementById( "HiTEN" ).innerHTML = hi;
+        setText(document.getElementById( "HiTEN" ),hi);
         
         
                                      document.getElementById( "player" ).style.opacity = 1;
                         BGM.volume = 0;
         soundtwinkle.volume = 0;
         
-        document.getElementById( "pause" ).innerHTML = "<img src = image/pause.png>";
+        setImage(document.getElementById( "pause" ),"image/pause.png");
 
     if (pausetime > 0){
             pausetime = pausetime - 1;
@@ -2413,54 +2411,54 @@ document.getElementById( "buki" + bi ).style.top = wy[bi];
         }
     if(damage >= 0){    
 if (idol == 200){
-          document.getElementById( "player" ).innerHTML = "<img src = image/IDOL1.png>";   
+          setImage(document.getElementById( "player" ),"image/IDOL1.png");   
         }else{        
         if (vec == "down"){
- document.getElementById( "player" ).innerHTML = "<img src = image/down.png>";
+ setImage(document.getElementById( "player" ),"image/down.png");
     }if (vec == "up"){
- document.getElementById( "player" ).innerHTML = "<img src = image/up.png>" ; 
+ setImage(document.getElementById( "player" ),"image/up.png"); 
     }if (vec == "left"){
- document.getElementById( "player" ).innerHTML = "<img src = image/left.png>";  
+ setImage(document.getElementById( "player" ),"image/left.png");  
     }if (vec == "right"){
- document.getElementById( "player" ).innerHTML = "<img src = image/right.png>" ; 
+ setImage(document.getElementById( "player" ),"image/right.png"); 
     }
         }
     }else{
-        document.getElementById( "player" ).innerHTML = "<img src = image/missdown.png>" ;
+        setImage(document.getElementById( "player" ),"image/missdown.png");
     }
         
             for( i = 0; i < aenum; i++){
                             if(aem[i] == 1){
-          document.getElementById( "Aenemy" + i ).innerHTML = "<img src = image/enemy.png>";
+          setImage(document.getElementById( "Aenemy" + i ),"image/enemy.png");
                             }
             }
 
          for( i = 0; i < benum; i++){
                             if(bem[i] == 1){
-          document.getElementById( "Benemy" + i ).innerHTML = "<img src = image/BENEMY1.png>";
+          setImage(document.getElementById( "Benemy" + i ),"image/BENEMY1.png");
                             }
              
             }
         
         for( i = 0; i < cenum; i++){
                             if(cem[i] == 1 && cevec[i] == "left"){
-          document.getElementById( "Cenemy" + i ).innerHTML = "<img src = image/CENEMY1.png>";
+          setImage(document.getElementById( "Cenemy" + i ),"image/CENEMY1.png");
                             }
                if(cem[i] == 1 && cevec[i] == "right"){
-          document.getElementById( "Cenemy" + i ).innerHTML = "<img src = image/CENEMY1R.png>";
+          setImage(document.getElementById( "Cenemy" + i ),"image/CENEMY1R.png");
                             }
              
             }
 
             for( i = 0; i < denum; i++){
                             if(dem[i] == 1){
-          document.getElementById( "Denemy" + i ).innerHTML = "<img src = image/DENEMY1.png>";
+          setImage(document.getElementById( "Denemy" + i ),"image/DENEMY1.png");
                             }
              
             }
      
                      if(eem == 2){
-                         document.getElementById( "Eenemy" ).innerHTML = "<img src = image/EENEMY1.png>";
+                         setImage(document.getElementById( "Eenemy" ),"image/EENEMY1.png");
               
                             }
         
@@ -2529,14 +2527,14 @@ if (idol == 200){
                     }
                 wepopa = 1;
                 
-                document.getElementById( "select" ).innerHTML = "<img src = image/weapon_anim.png width=30>";
+                setImageWidth(document.getElementById( "select" ),"image/weapon_anim.png",30);
                                             document.getElementById( "select" ).style.top = 332;
                       document.getElementById( "select" ).style.left = 170;
         
                 shift = 1;
                 document.getElementById( "maple" ).style.top = 0;
-                document.getElementById( "haikei" ).innerHTML = "<img src = image/gameover_continue.jpg>";
-                document.getElementById( "maple" ).innerHTML = "<img src = image/gameover_continue1.png>";
+                setImage(document.getElementById( "haikei" ),"image/gameover_continue.jpg");
+                setImage(document.getElementById( "maple" ),"image/gameover_continue1.png");
                         document.getElementById( "STOCK" ).innerHTML = "";
                 document.getElementById( "STOCKS" ).innerHTML = "";
  document.getElementById( "stat" ).innerHTML = "";
@@ -2633,14 +2631,14 @@ if(scene == "gameoverTotitle"){
                                 document.getElementById( "maple" ).innerHTML = "";
          //タイトル表示処理
     if(night ==0){
-                            document.getElementById( "haikei" ).innerHTML = "<img src = image/title.jpg>";
-                      document.getElementById( "maple" ).innerHTML = "<img src = image/maple.png>";
+                            setImage(document.getElementById( "haikei" ),"image/title.jpg");
+                      setImage(document.getElementById( "maple" ),"image/maple.png");
             
             } else{
-                          document.getElementById( "haikei" ).innerHTML = "<img src = image/titlenight.jpg>";
-                document.getElementById( "maple" ).innerHTML = "<img src = image/maple_night.png>";
+                          setImage(document.getElementById( "haikei" ),"image/titlenight.jpg");
+                setImage(document.getElementById( "maple" ),"image/maple_night.png");
             }
-    document.getElementById( "logo" ).innerHTML = "<img src = image/logo.png>";
+    setImage(document.getElementById( "logo" ),"image/logo.png");
      
     //ここまで
         BGM.pause();
@@ -2678,18 +2676,18 @@ shift = 2;
         
          //タイトル表示処理
     if(night ==0){
-                            document.getElementById( "haikei" ).innerHTML = "<img src = image/title.jpg>";
-                      document.getElementById( "maple" ).innerHTML = "<img src = image/maple.png>";
+                            setImage(document.getElementById( "haikei" ),"image/title.jpg");
+                      setImage(document.getElementById( "maple" ),"image/maple.png");
             
             } else{
-                          document.getElementById( "haikei" ).innerHTML = "<img src = image/titlenight.jpg>";
-                document.getElementById( "maple" ).innerHTML = "<img src = image/maple_night.png>";
+                          setImage(document.getElementById( "haikei" ),"image/titlenight.jpg");
+                setImage(document.getElementById( "maple" ),"image/maple_night.png");
             }
-    document.getElementById( "logo" ).innerHTML = "<img src = image/logo.png>";
+    setImage(document.getElementById( "logo" ),"image/logo.png");
      
     //ここまで
         
-                          document.getElementById( "select" ).innerHTML = "<img src = image/weapon_anim.png width=30>";
+                   setImageWidth(document.getElementById( "select" ),"image/weapon_anim.png",30);
         
         shift = 0;
         
@@ -2697,10 +2695,10 @@ shift = 2;
         
         if(hi < soundp){
 
-         document.getElementById( "mode" ).innerHTML = "<img src = image/mode_A.png>";
+         setImage(document.getElementById( "mode" ),"image/mode_A.png");
             
         }else{
-         document.getElementById( "mode" ).innerHTML = "<img src = image/mode_B.png>";   
+         setImage(document.getElementById( "mode" ),"image/mode_B.png");   
         }
         
         
@@ -2733,7 +2731,7 @@ shift = 2;
             pausetime = 0;
         }
         
-        document.getElementById( "enter" ).innerHTML = "<img src = image/PUSHENTER.png>";
+        setImage(document.getElementById( "enter" ),"image/PUSHENTER.png");
         
         
         
@@ -2908,7 +2906,6 @@ if(cheatB < 14){
         if(cheatD <= 0){
             cheatD = 0;
         }
-        
            //裏技5 タイトル画面で[4989]と入力すると、いきなり最終段階（ファイナルモード）でゲームがスタート（裏技3併用不可、裏技1が自動で有効化、初期残り数3固定）。
         
         if ( num_k == "EMPTY" && (cheatF == -1 || cheatF == 0)){
@@ -2983,7 +2980,7 @@ if(cheatB < 14){
                 blackout = blackout + shiftspeed;
                 
                 if(blackout >=1){
-                    document.getElementById( "haikei" ).innerHTML = "<img src = image/page"+i+".jpg>";
+                    setImage(document.getElementById( "haikei" ),"image/page"+i+".jpg");
                     
             
                     
@@ -3080,21 +3077,21 @@ if(sizealert == 0){
          if(sizealert == 0){
         //スペシャル裏技　サウンドテストで「CREDITS」に合わせて「7777」と入力すると、クレジットを再生することができる。
          if(i == 16){
-          if ( k == "EMPTY" && (cheatE == -1 || cheatE == 0)){
+          if ( num_k == "EMPTY" && (cheatE == -1 || cheatE == 0)){
             cheatE = 0;
-        }else if ( k == "7" && (cheatE == 0 || cheatE == 1)){
+        }else if ( num_k == "7" && (cheatE == 0 || cheatE == 1)){
             cheatE = 1;
-        } else if ( k == "EMPTY" && (cheatE == 1 || cheatE == 2)){
+        } else if ( num_k == "EMPTY" && (cheatE == 1 || cheatE == 2)){
             cheatE = 2;
-        }else if ( k == "7" && (cheatE == 2 || cheatE == 3)){
+        }else if ( num_k == "7" && (cheatE == 2 || cheatE == 3)){
             cheatE = 3;
-        }else  if ( k == "EMPTY" && (cheatE == 3 || cheatE == 4)){
+        }else  if ( num_k == "EMPTY" && (cheatE == 3 || cheatE == 4)){
             cheatE = 4;
-        }else if ( k == "7" && (cheatE == 4|| cheatE == 5)){
+        }else if ( num_k == "7" && (cheatE == 4|| cheatE == 5)){
             cheatE = 5;
-        }else if ( k == "EMPTY" && (cheatE == 5|| cheatE == 6)){
+        }else if ( num_k == "EMPTY" && (cheatE == 5|| cheatE == 6)){
             cheatE = 6;
-        }else if ( k == "7" && (cheatE == 6|| cheatE == 7)){
+        }else if ( num_k == "7" && (cheatE == 6|| cheatE == 7)){
             cheatE = 7;
         }else if (cheatE == 7 || cheatE == 8){
          
@@ -3116,41 +3113,42 @@ if(sizealert == 0){
              
          }
          
+         
          if (i == 0){
-                document.getElementById( "BGM" ).innerHTML = "TITLE";
+                setText(document.getElementById( "BGM" ),"TITLE");
          }
          if (i == 1){
-                document.getElementById( "BGM" ).innerHTML = "MAIN THEME";
+                setText(document.getElementById( "BGM" ),"MAIN THEME");
          }if (i == 2){
-                document.getElementById( "BGM" ).innerHTML = "MAIN THEME 2";
+                setText(document.getElementById( "BGM" ),"MAIN THEME 2");
             }if (i == 3){
-                document.getElementById( "BGM" ).innerHTML = "HOW TO PLAY";
+                setText(document.getElementById( "BGM" ),"HOW TO PLAY");
             }if (i == 4){
-                document.getElementById( "BGM" ).innerHTML = "GAME OVER";
+                setText(document.getElementById( "BGM" ),"GAME OVER");
             }if (i == 5){
-                document.getElementById( "BGM" ).innerHTML = "MISS";
+                setText(document.getElementById( "BGM" ),"MISS");
             }if (i == 6){
-                document.getElementById( "BGM" ).innerHTML = "SELECT";
+                setText(document.getElementById( "BGM" ),"SELECT");
             }if (i == 7){
-                document.getElementById( "BGM" ).innerHTML = "DECIDE";
+                setText(document.getElementById( "BGM" ),"DECIDE");
          }if (i == 8){
-                document.getElementById( "BGM" ).innerHTML = "BOOMERANG";
+                setText(document.getElementById( "BGM" ),"BOOMERANG");
             }if (i == 9){
-                document.getElementById( "BGM" ).innerHTML = "ITEM GET";
+                setText(document.getElementById( "BGM" ),"ITEM GET");
             }if (i == 10){
-                document.getElementById( "BGM" ).innerHTML = "DEFEAT";
+                setText(document.getElementById( "BGM" ),"DEFEAT");
             }if (i == 11){
-                document.getElementById( "BGM" ).innerHTML = "1UP";
+                setText(document.getElementById( "BGM" ),"1UP");
             }if (i == 12){
-                document.getElementById( "BGM" ).innerHTML = "PAUSE";
+                setText(document.getElementById( "BGM" ),"PAUSE");
             }if (i == 13){
-                document.getElementById( "BGM" ).innerHTML = "TWINKLE 1";
+                setText(document.getElementById( "BGM" ),"TWINKLE 1");
             }if (i == 14){
-                document.getElementById( "BGM" ).innerHTML = "TWINKLE 2";
+                setText(document.getElementById( "BGM" ),"TWINKLE 2");
             }if (i == 15 ){
-                document.getElementById( "BGM" ).innerHTML = "MAIN THEME PIANO MIX";
+                setText(document.getElementById( "BGM" ),"MAIN THEME PIANO MIX");
             }if (i == 16 ){
-                document.getElementById( "BGM" ).innerHTML = "CREDITS";
+                setText(document.getElementById( "BGM" ),"CREDITS");
             }
                 
        if(sizealert == 0){ 
@@ -3334,30 +3332,30 @@ walk = 0;
                     document.getElementById( "player" ).style.left = sx;
  document.getElementById( "player" ).style.top = sy;
  
-         document.getElementById( "stat" ).innerHTML = "<img src = image/status.png>";   
+         setImage(document.getElementById( "stat" ),"image/status.png");   
     
 weapon = 1;
            
 shottime = 0;
     
 
-   document.getElementById( "STOCK" ).innerHTML = stock;
-                document.getElementById( "STOCKS" ).innerHTML = stock;
+   setText(document.getElementById( "STOCK" ),stock);
+                setText(document.getElementById( "STOCKS" ),stock);
                 
                 
                 
-                document.getElementById( "player" ).innerHTML = "<img src = image/down.png>";            
+                setImage(document.getElementById( "player" ),"image/down.png");            
     if(night == 0){
- document.getElementById( "haikei" ).innerHTML = "<img src = image/background.jpg>";
+ setImage(document.getElementById( "haikei" ),"image/background.jpg");
     }else{
-         document.getElementById( "haikei" ).innerHTML = "<img src = image/backgroundnight.jpg>";
+         setImage(document.getElementById( "haikei" ),"image/backgroundnight.jpg");
     }
     
  
         
-        document.getElementById( "TEN" ).innerHTML = p;
+        setText(document.getElementById( "TEN" ),p);
         
-        document.getElementById( "HiTEN" ).innerHTML = hi;
+        setText(document.getElementById( "HiTEN" ),hi);
                       }
                    
     }
@@ -3400,10 +3398,10 @@ shottime = 0;
          i = i + 1;
          
          if(i>15){
-                document.getElementById( "maple" ).innerHTML = "<img src = image/gameover_continue2.png>";
+                setImage(document.getElementById( "maple" ),"image/gameover_continue2.png");
          sy = sy-20;
          }else{
-                document.getElementById( "maple" ).innerHTML = "<img src = image/gameover_continue3.png>";
+                setImage(document.getElementById( "maple" ),"image/gameover_continue3.png");
          }
          
       
@@ -3472,21 +3470,21 @@ weapon = 1;
 shottime = 0;
     
 
-   document.getElementById( "STOCK" ).innerHTML = stock;
-                document.getElementById( "STOCKS" ).innerHTML = stock;
+   setText(document.getElementById( "STOCK" ),stock);
+                setText(document.getElementById( "STOCKS" ),stock);
                 
-                document.getElementById( "player" ).innerHTML = "<img src = image/down.png>";            
+                setImage(document.getElementById( "player" ),"image/down.png");            
     if(night == 0){
- document.getElementById( "haikei" ).innerHTML = "<img src = image/background.jpg>";
+ setImage(document.getElementById( "haikei" ),"image/background.jpg");
     }else{
-         document.getElementById( "haikei" ).innerHTML = "<img src = image/backgroundnight.jpg>";
+         setImage(document.getElementById( "haikei" ),"image/backgroundnight.jpg");
     }
     
- document.getElementById( "stat" ).innerHTML = "<img src = image/status.png>";
+ setImage(document.getElementById( "stat" ),"image/status.png");
         
-        document.getElementById( "TEN" ).innerHTML = p;
+        setText(document.getElementById( "TEN" ),p);
         
-        document.getElementById( "HiTEN" ).innerHTML = hi;
+        setText(document.getElementById( "HiTEN" ),hi);
                       }
                    
     }
@@ -3522,14 +3520,14 @@ if(scene == "load"){ //ゲームスタート、タイトル表示演出
     
     //タイトル表示処理
     if(night ==0){
-                            document.getElementById( "haikei" ).innerHTML = "<img src = image/title.jpg>";
-                      document.getElementById( "maple" ).innerHTML = "<img src = image/maple.png>";
+                            setImage(document.getElementById( "haikei" ),"image/title.jpg");
+                      setImage(document.getElementById( "maple" ),"image/maple.png");
             
             } else{
-                          document.getElementById( "haikei" ).innerHTML = "<img src = image/titlenight.jpg>";
-                document.getElementById( "maple" ).innerHTML = "<img src = image/maple_night.png>";
+                          setImage(document.getElementById( "haikei" ),"image/titlenight.jpg");
+                setImage(document.getElementById( "maple" ),"image/maple_night.png");
             }
-    document.getElementById( "logo" ).innerHTML = "<img src = image/logo.png>";
+    setImage(document.getElementById( "logo" ),"image/logo.png");
      
     //ここまで
     
@@ -3609,10 +3607,10 @@ if(scene == "load"){ //ゲームスタート、タイトル表示演出
         if (shift == 0){
                  if(playOKMode){
        
-            document.getElementById( "haikei" ).innerHTML = "<img src = image/alert.jpg>";
+            setImage(document.getElementById( "haikei" ),"image/alert.jpg");
                      
                  }else{
-            document.getElementById( "haikei" ).innerHTML = "<img src = image/RunningError.jpg>";         
+            setImage(document.getElementById( "haikei" ),"image/RunningError.jpg");         
                      
                  }
      blackout = blackout - shiftspeed;
@@ -3624,7 +3622,7 @@ if(scene == "load"){ //ゲームスタート、タイトル表示演出
         if(shift == 1){
             
             if(playOKMode){
-        document.getElementById( "enter" ).innerHTML = "<img src = image/enteralert.png>";
+        setImage(document.getElementById( "enter" ),"image/enteralert.png");
             }
             if(k == "ENTER" && sizealert == 0 && playOKMode){
                  shift = 2; 
@@ -3686,7 +3684,7 @@ document.getElementById( "enter" ).style.top = 390;
     
     if(scene == "erase"){
 
-                    document.getElementById( "haikei" ).innerHTML = "<img src = image/erase_screen.jpg>";
+                    setImage(document.getElementById( "haikei" ),"image/erase_screen.jpg");
         
        
         
@@ -3771,7 +3769,7 @@ document.getElementById( "enter" ).style.top = 390;
         
      for(let i = 0; i < 3; i++){
         
-            document.getElementById( "erase"+i ).innerHTML = "<img src = image/erase_"+i+".png>";
+            setImage(document.getElementById( "erase"+i ),"image/erase_"+i+".png");
         
          if(i != 2){
          if(i == e_select){
@@ -3796,7 +3794,7 @@ document.getElementById( "enter" ).style.top = 390;
 
                 shift = 1;
                                         document.getElementById( "enter" ).innerHTML = "";
-                 document.getElementById( "haikei" ).innerHTML = "<img src = image/page1.jpg>";
+                 setImage(document.getElementById( "haikei" ),"image/page1.jpg");
                     
                 
                 document.getElementById( "select" ).innerHTML = "";
@@ -3861,14 +3859,14 @@ shift = 2;
                 
  //タイトル表示処理
     if(night ==0){
-                            document.getElementById( "haikei" ).innerHTML = "<img src = image/title.jpg>";
-                      document.getElementById( "maple" ).innerHTML = "<img src = image/maple.png>";
+                            setImage(document.getElementById( "haikei" ),"image/title.jpg");
+                      setImage(document.getElementById( "maple" ),"image/maple.png");
             
             } else{
-                          document.getElementById( "haikei" ).innerHTML = "<img src = image/titlenight.jpg>";
-                document.getElementById( "maple" ).innerHTML = "<img src = image/maple_night.png>";
+                          setImage(document.getElementById( "haikei" ),"image/titlenight.jpg");
+                setImage(document.getElementById( "maple" ),"image/maple_night.png");
             }
-    document.getElementById( "logo" ).innerHTML = "<img src = image/logo.png>";
+    setImage(document.getElementById( "logo" ),"image/logo.png");
      
     //ここまで
                       }
@@ -3915,9 +3913,9 @@ shift = 2;
 
                 shift = 1;
                                         document.getElementById( "enter" ).innerHTML = "";
-                 document.getElementById( "haikei" ).innerHTML = "<img src = image/sound.jpg>";
+                 setImage(document.getElementById( "haikei" ),"image/sound.jpg");
   document.getElementById( "select" ).innerHTML = "";
-                                 document.getElementById( "BGM" ).innerHTML = "TITLE";
+                                 setText(document.getElementById( "BGM" ),"TITLE");
                 i = 0;
                      document.getElementById( "mode" ).innerHTML = "";
                 document.getElementById( "maple" ).innerHTML = "";
@@ -3966,7 +3964,7 @@ document.getElementById( "credit" ).style.fontFamily =　sg;
                 shift = 1;
                 textout = 0;
                 blackout = 1;
-                      document.getElementById( "haikei" ).innerHTML = "<img src = image/credits.jpg>";
+                      setImage(document.getElementById( "haikei" ),"image/credits.jpg");
                 
                                     document.getElementById( "select" ).innerHTML = "";
        
@@ -4046,59 +4044,59 @@ document.getElementById( "credit" ).style.top = 340;
             document.getElementById( "credit" ).style.left = "50%";
 document.getElementById( "credit" ).style.top = 290;
 document.getElementById( "credit" ).style.fontFamily =　"Higashi";
-            document.getElementById( "credit" ).innerHTML = "<nobr>タイトル画面で<br>Xキーを押しつづけると…？</nobr>";
+            setText(document.getElementById( "credit" ),"タイトル画面で<br>Xキーを押しつづけると…？");
         }else if (time >=81){
      textout = textout - (0.5 * shiftspeed);      
         }else if (time >=66){
      textout = textout + shiftspeed
             document.getElementById( "credit" ).style.left = "50%";
 document.getElementById( "credit" ).style.top = 340;
-            document.getElementById( "credit" ).innerHTML = "<nobr>©2022 RAMUNE SPARK</nobr>";
+            setText(document.getElementById( "credit" ),"©2022 RAMUNE SPARK");
         }else if (time >=64){
      textout = textout - (0.5 * shiftspeed);      
         }else if (time >=60){
      textout = textout + (0.5 * shiftspeed);
-            document.getElementById( "credit" ).innerHTML = "<nobr>Director<br>RAMUNE '01</nobr>";
+            setText(document.getElementById( "credit" ),"Director<br>RAMUNE '01");
         }else if (time >=58){
      textout = textout - (0.5 * shiftspeed);      
         }else if (time >=54){
      textout = textout + (0.5 * shiftspeed);
-            document.getElementById( "credit" ).innerHTML = "<nobr>Manual<br>RAMUNE '01</nobr>";
+            setText(document.getElementById( "credit" ),"Manual<br>RAMUNE '01");
         }else if (time >=52){
      textout = textout - (0.5 * shiftspeed);      
         }else if (time >=48){
      textout = textout + (0.5 * shiftspeed);
-            document.getElementById( "credit" ).innerHTML = "<nobr>Voice<br>RAMUNE '01<br>(VOICE CHANGER)</nobr>";
+            setText(document.getElementById( "credit" ),"Voice<br>RAMUNE '01<br>(VOICE CHANGER)");
         }else if (time >=46){
      textout = textout - (0.5 * shiftspeed);      
         } else if (time >=42){
      textout = textout + (0.5 * shiftspeed);
-            document.getElementById( "credit" ).innerHTML = "<nobr>Sound FX<br>RAMUNE '01</nobr>";
+            setText(document.getElementById( "credit" ),"Sound FX<br>RAMUNE '01");
         }else if (time >=40){
      textout = textout - (0.5 * shiftspeed);      
         }  else if (time >=36){
      textout = textout + (0.5 * shiftspeed);
-            document.getElementById( "credit" ).innerHTML = "<nobr>Music Composer<br>RAMUNE '01</nobr>";
+            setText(document.getElementById( "credit" ),"Music Composer<br>RAMUNE '01");
         }else if (time >=34){
      textout = textout - (0.5 * shiftspeed);      
         }else if (time >=30){
      textout = textout + (0.5 * shiftspeed);
-            document.getElementById( "credit" ).innerHTML = "<nobr>Sprite Design<br>RAMUNE '01</nobr>";
+            setText(document.getElementById( "credit" ),"Sprite Design<br>RAMUNE '01");
         }else if (time >=28){
      textout = textout - (0.5 * shiftspeed);      
         }else if (time >=24){
      textout = textout + (0.5 * shiftspeed);
-            document.getElementById( "credit" ).innerHTML = "<nobr>Art / Character Design<br>RAMUNE '01</nobr>";
+            setText(document.getElementById( "credit" ),"Art / Character Design<br>RAMUNE '01");
         }else if (time >=22){
      textout = textout - (0.5 * shiftspeed);      
         }else if (time >=18){
      textout = textout + (0.5 * shiftspeed);
-            document.getElementById( "credit" ).innerHTML = "<nobr>Programmer<br>RAMUNE '01</nobr>";
+            setText(document.getElementById( "credit" ),"Programmer<br>RAMUNE '01");
         }else if (time >=16){
      textout = textout - (0.5 * shiftspeed);    
         }else if (time >=12){
      textout = textout + (0.5 * shiftspeed);      
-document.getElementById( "credit" ).innerHTML = "<nobr>Game Designer<br>RAMUNE '01</nobr>";
+setText(document.getElementById( "credit" ),"Game Designer<br>RAMUNE '01");
           
 document.getElementById( "credit" ).style.left = "50%";
 document.getElementById( "credit" ).style.top = 290;
@@ -4106,7 +4104,7 @@ document.getElementById( "credit" ).style.top = 290;
      textout = textout - (0.5 * shiftspeed);      
         }else if (time >=7){
      textout = textout + (0.5 * shiftspeed);      
-document.getElementById( "credit" ).innerHTML = "<nobr>BOOMERANG SURVIVOR CREDITS</nobr>";
+setText(document.getElementById( "credit" ),"BOOMERANG SURVIVOR CREDITS");
         }
               }
             
@@ -4131,20 +4129,20 @@ document.getElementById( "credit" ).innerHTML = "<nobr>BOOMERANG SURVIVOR CREDIT
                 blackout = 1;
                      if (cheatE == 8){//サウンドテストの裏技から入った時
                     i = 16;
-                         document.getElementById( "haikei" ).innerHTML = "<img src = image/sound.jpg>";
-                     document.getElementById( "BGM" ).innerHTML = "CREDITS";
+                         setImage(document.getElementById( "haikei" ),"image/sound.jpg");
+                     setText(document.getElementById( "BGM" ),"CREDITS");
                 }else{
                     
              //タイトル表示処理
     if(night ==0){
-                            document.getElementById( "haikei" ).innerHTML = "<img src = image/title.jpg>";
-                      document.getElementById( "maple" ).innerHTML = "<img src = image/maple.png>";
+                            setImage(document.getElementById( "haikei" ),"image/title.jpg");
+                      setImage(document.getElementById( "maple" ),"image/maple.png");
             
             } else{
-                          document.getElementById( "haikei" ).innerHTML = "<img src = image/titlenight.jpg>";
-                document.getElementById( "maple" ).innerHTML = "<img src = image/maple_night.png>";
+                          setImage(document.getElementById( "haikei" ),"image/titlenight.jpg");
+                setImage(document.getElementById( "maple" ),"image/maple_night.png");
             }
-    document.getElementById( "logo" ).innerHTML = "<img src = image/logo.png>";
+    setImage(document.getElementById( "logo" ),"image/logo.png");
      
     //ここまで
                     
@@ -4237,7 +4235,7 @@ if( key == 13 ){
    k = "ESC";
  }
         if( key == 88 ){
-   x_k = "X";
+   X_k = "X";
  }
      }
  if( key == 48 ){
@@ -4464,7 +4462,7 @@ function loop(e) {
         }else if(bButton.value == 1.0) {
         k = "ESC";
         }else if(xButton.value == 1.0){
-         x_k = "X";
+         X_k = "X";
     }else if(sButton.value == 1.0){
          k = "SPACE";
     }else{
