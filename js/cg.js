@@ -1,4 +1,4 @@
-const localPlayStyle = true;
+const localPlayStyle = false;
 const URL = location.href;
 
 let playOKMode;
