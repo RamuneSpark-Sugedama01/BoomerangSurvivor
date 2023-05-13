@@ -2429,7 +2429,7 @@ if (idol == 200){
         
             for( i = 0; i < aenum; i++){
                             if(aem[i] == 1){
-          setImage(document.getElementById( "Aenemy" + i ),"image/enemy.png");
+          setImage(document.getElementById( "Aenemy" + i ),"image/ENEMY.png");
                             }
             }
 
